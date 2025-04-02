@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const connectDb = require('./config/dbconfig');
 const appindex = require('./app')
-// json formate
+
 app.use(express.json())
+app.use(cors({origin:"*"}))
 connectDb()
 
 
